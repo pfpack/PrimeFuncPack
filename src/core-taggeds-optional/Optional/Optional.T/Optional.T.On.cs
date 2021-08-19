@@ -6,7 +6,7 @@ namespace System
 {
     partial struct Optional<T>
     {
-        internal Optional<T> On(
+        public Optional<T> On(
             Func<T, Unit> onPresent,
             Func<Unit> onElse)
         {
@@ -16,7 +16,7 @@ namespace System
             return InternalOn(onPresent, onElse, This);
         }
 
-        internal Optional<T> On(
+        public Optional<T> On(
             Action<T> onPresent,
             Action onElse)
         {
@@ -26,7 +26,7 @@ namespace System
             return InternalOn(onPresent.InvokeThenToUnit, onElse.InvokeThenToUnit, This);
         }
 
-        internal Task<Optional<T>> OnAsync(
+        public Task<Optional<T>> OnAsync(
             Func<T, Task<Unit>> onPresentAsync,
             Func<Task<Unit>> onElseAsync)
         {
@@ -36,7 +36,7 @@ namespace System
             return InternalOn(onPresentAsync, onElseAsync, ThisAsync);
         }
 
-        internal Task<Optional<T>> OnAsync(
+        public Task<Optional<T>> OnAsync(
             Func<T, Task> onPresentAsync,
             Func<Task> onElseAsync)
         {
@@ -46,7 +46,7 @@ namespace System
             return InternalOn(onPresentAsync, onElseAsync, ThisAsync);
         }
 
-        internal ValueTask<Optional<T>> OnValueAsync(
+        public ValueTask<Optional<T>> OnValueAsync(
             Func<T, ValueTask<Unit>> onPresentAsync,
             Func<ValueTask<Unit>> onElseAsync)
         {
@@ -56,7 +56,7 @@ namespace System
             return InternalOn(onPresentAsync, onElseAsync, ThisValueAsync);
         }
 
-        internal ValueTask<Optional<T>> OnValueAsync(
+        public ValueTask<Optional<T>> OnValueAsync(
             Func<T, ValueTask> onPresentAsync,
             Func<ValueTask> onElseAsync)
         {

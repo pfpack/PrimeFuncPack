@@ -15,8 +15,10 @@ namespace System
             {
                 return EqualityComparer.Equals(value, other.value);
             }
-
-            return true;
+            else
+            {
+                return true;
+            }
         }
     }
 }

@@ -5,17 +5,11 @@ namespace System
     partial struct Result<TSuccess, TFailure>
     {
         public Result(TSuccess success)
-        {
-            isSuccess = true;
-            this.success = success;
-            failure = default;
-        }
+            =>
+            (this.success, failure, isSuccess) = (success, default, true);
 
         public Result(TFailure failure)
-        {
-            isSuccess = false;
-            success = default!;
-            this.failure = failure;
-        }
+            =>
+            (this.failure, success, isSuccess) = (failure, default!, false);
     }
 }

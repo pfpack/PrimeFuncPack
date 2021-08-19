@@ -1,7 +1,6 @@
 ﻿#nullable enable
 
 using System.Collections.Generic;
-using static System.Optional;
 
 namespace System.Linq
 {
@@ -15,7 +14,7 @@ namespace System.Linq
             {
                 > 1 => throw moreThanOneElementExceptionFactory.Invoke(),
 
-                1 => Present(source[0]),
+                1 => new(source[0]),
 
                 _ => default
             };
@@ -39,7 +38,7 @@ namespace System.Linq
                         }
                     }
 
-                    return Present(current);
+                    return new(current);
                 }
             }
 

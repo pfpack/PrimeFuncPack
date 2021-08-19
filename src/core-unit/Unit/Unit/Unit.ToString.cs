@@ -4,6 +4,8 @@ namespace System
 {
     partial struct Unit
     {
-        public override string ToString() => string.Empty;
+        public override string ToString()
+            =>
+            "The Unit value: ()";
     }
 }

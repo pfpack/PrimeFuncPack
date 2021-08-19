@@ -15,8 +15,10 @@ namespace System
             {
                 return SuccessComparer.Equals(success, other.success);
             }
-
-            return FailureComparer.Equals(failure, other.failure);
+            else
+            {
+                return FailureComparer.Equals(failure, other.failure);
+            }
         }
     }
 }

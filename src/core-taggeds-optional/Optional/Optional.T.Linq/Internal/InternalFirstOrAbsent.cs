@@ -1,7 +1,6 @@
 ﻿#nullable enable
 
 using System.Collections.Generic;
-using static System.Optional;
 
 namespace System.Linq
 {
@@ -13,7 +12,7 @@ namespace System.Linq
             using var enumerator = source.GetEnumerator();
 
             return enumerator.MoveNext()
-                ? Present(enumerator.Current)
+                ? new(enumerator.Current)
                 : default;
         }
 
@@ -25,7 +24,7 @@ namespace System.Linq
             {
                 if (predicate.Invoke(current))
                 {
-                    return Present(current);
+                    return new(current);
                 }
             }
 

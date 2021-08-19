@@ -6,16 +6,16 @@ namespace System
     {
         public static Optional<T> Present<T>(T value)
             =>
-            Optional<T>.Present(value);
+            new(value);
 
         public static Optional<T> Absent<T>()
             =>
-            Optional<T>.Absent;
+            default;
 
         public static Optional<T> Absent<T>(Unit unit) => unit switch
         {
             _ =>
-            Optional<T>.Absent
+            default
         };
     }
 }

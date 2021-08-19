@@ -8,12 +8,13 @@ namespace PrimeFuncPack.Core.Tests
     partial class UnitTests
     {
         [Test]
-        public void ToString_ExpectEmptyString()
+        public void ToString_ExpectUnitValueString()
         {
             var source = default(Unit);
             var actual = source.ToString();
 
-            Assert.IsEmpty(actual);
+            const string expected = "The Unit value: ()";
+            Assert.AreEqual(expected, actual);
         }
     }
 }

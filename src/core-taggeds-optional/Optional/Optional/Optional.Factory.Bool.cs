@@ -6,10 +6,10 @@ namespace System
     {
         public static Optional<Unit> True()
             =>
-            Optional<Unit>.Present(default);
+            new(default);
 
         public static Optional<Unit> False()
             =>
-            Optional<Unit>.Absent;
+            default;
     }
 }

@@ -15,9 +15,12 @@
 		<PackageReference Include="NUnit" Version="3.13.1" />
 		<PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
-		<PackageReference Include="PrimeFuncPack.Core.Unit" Version="1.1.1" />
 		<PackageReference Include="PrimeFuncPack.UnitTest.Data" Version="2.0.6" />
 		<PackageReference Include="PrimeFuncPack.UnitTest.Moq" Version="1.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Unit\Unit.csproj" />
 	</ItemGroup>
 
 </Project>

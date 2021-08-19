@@ -1,7 +1,6 @@
 ﻿#nullable enable
 
 using System.Collections.Generic;
-using static System.Optional;
 
 namespace System.Linq
 {
@@ -11,7 +10,7 @@ namespace System.Linq
             this IReadOnlyList<TSource> source)
             =>
             source.Count > 0
-                ? Present(source[^1])
+                ? new(source[^1])
                 : default;
 
         public static Optional<TSource> InternalLastOrAbsent<TSource>(
@@ -24,7 +23,7 @@ namespace System.Linq
 
                 if (predicate.Invoke(current))
                 {
-                    return Present(current);
+                    return new(current);
                 }
             }
 

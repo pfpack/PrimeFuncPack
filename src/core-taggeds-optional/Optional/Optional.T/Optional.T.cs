@@ -15,11 +15,5 @@ namespace System
         public bool IsAbsent
             =>
             hasValue is false;
-
-        private Optional(T value)
-        {
-            hasValue = true;
-            this.value = value;
-        }
     }
 }

@@ -7,14 +7,14 @@ namespace System
         public static Optional<T> PresentOrElse<T>(T? value)
             =>
             value is not null
-                ? Optional<T>.Present(value)
-                : Optional<T>.Absent;
+                ? new(value)
+                : default;
 
         public static Optional<T> PresentOrElse<T>(T? value)
             where T : struct
             =>
             value is not null
-                ? Optional<T>.Present(value.GetValueOrDefault())
-                : Optional<T>.Absent;
+                ? new(value.GetValueOrDefault())
+                : default;
     }
 }

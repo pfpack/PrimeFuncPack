@@ -7,14 +7,14 @@ namespace System
         public static Optional<T> PresentOrThrow<T>(T? value)
             =>
             value is not null
-                ? Optional<T>.Present(value)
+                ? new(value)
                 : throw CreateExpectedSpecifiedException(nameof(value));
 
         public static Optional<T> PresentOrThrow<T>(T? value)
             where T : struct
             =>
             value is not null
-                ? Optional<T>.Present(value.GetValueOrDefault())
+                ? new(value.GetValueOrDefault())
                 : throw CreateExpectedSpecifiedException(nameof(value));
     }
 }

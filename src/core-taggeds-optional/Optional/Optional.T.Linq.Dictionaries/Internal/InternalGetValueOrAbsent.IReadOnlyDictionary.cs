@@ -1,7 +1,6 @@
 ﻿#nullable enable
 
 using System.Collections.Generic;
-using static System.Optional;
 
 namespace System.Linq
 {
@@ -12,7 +11,7 @@ namespace System.Linq
             TKey key)
             =>
             dictionary.TryGetValue(key, out var value)
-                ? Present(value)
+                ? new(value)
                 : default;
     }
 }

@@ -6,7 +6,7 @@ namespace System
 {
     partial struct Optional<T>
     {
-        internal Optional<T> OnAbsent(
+        public Optional<T> OnAbsent(
             Func<Unit> handler)
         {
             _ = handler ?? throw new ArgumentNullException(nameof(handler));
@@ -14,7 +14,7 @@ namespace System
             return InternalOnAbsent(handler, This);
         }
 
-        internal Optional<T> OnAbsent(
+        public Optional<T> OnAbsent(
             Action handler)
         {
             _ = handler ?? throw new ArgumentNullException(nameof(handler));
@@ -22,7 +22,7 @@ namespace System
             return InternalOnAbsent(handler.InvokeThenToUnit, This);
         }
 
-        internal Task<Optional<T>> OnAbsentAsync(
+        public Task<Optional<T>> OnAbsentAsync(
             Func<Task<Unit>> handlerAsync)
         {
             _ = handlerAsync ?? throw new ArgumentNullException(nameof(handlerAsync));
@@ -30,7 +30,7 @@ namespace System
             return InternalOnAbsent(handlerAsync, ThisAsync);
         }
 
-        internal Task<Optional<T>> OnAbsentAsync(
+        public Task<Optional<T>> OnAbsentAsync(
             Func<Task> handlerAsync)
         {
             _ = handlerAsync ?? throw new ArgumentNullException(nameof(handlerAsync));
@@ -38,7 +38,7 @@ namespace System
             return InternalOnAbsent(handlerAsync, ThisAsync);
         }
 
-        internal ValueTask<Optional<T>> OnAbsentValueAsync(
+        public ValueTask<Optional<T>> OnAbsentValueAsync(
             Func<ValueTask<Unit>> handlerAsync)
         {
             _ = handlerAsync ?? throw new ArgumentNullException(nameof(handlerAsync));
@@ -46,7 +46,7 @@ namespace System
             return InternalOnAbsent(handlerAsync, ThisValueAsync);
         }
 
-        internal ValueTask<Optional<T>> OnAbsentValueAsync(
+        public ValueTask<Optional<T>> OnAbsentValueAsync(
             Func<ValueTask> handlerAsync)
         {
             _ = handlerAsync ?? throw new ArgumentNullException(nameof(handlerAsync));

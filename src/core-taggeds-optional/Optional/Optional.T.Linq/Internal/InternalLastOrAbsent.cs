@@ -1,7 +1,6 @@
 ﻿#nullable enable
 
 using System.Collections.Generic;
-using static System.Optional;
 
 namespace System.Linq
 {
@@ -22,7 +21,7 @@ namespace System.Linq
                 }
                 while (enumerator.MoveNext());
 
-                return Present(current);
+                return new(current);
             }
 
             return default;
@@ -50,7 +49,7 @@ namespace System.Linq
                         }
                     }
 
-                    return Present(current);
+                    return new(current);
                 }
             }
 
